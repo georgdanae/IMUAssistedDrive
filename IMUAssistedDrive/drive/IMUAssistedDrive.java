@@ -42,7 +42,7 @@ public class IMUAssistedDrive {
 
     // this method gets called at the constructor
     public void initializeHardware () {
-        //imu initialization
+        // imu initialization
         imu = GlobalHardwareMap.getHw().get(BNO055IMU.class, "imu");
         BNO055IMU.Parameters parameters = new BNO055IMU.Parameters();
         parameters.accelerationIntegrationAlgorithm = null;
@@ -54,7 +54,7 @@ public class IMUAssistedDrive {
         parameters.loggingTag = "IMU";
         imu.initialize(parameters);
 
-        //motor initialization
+        // motor initialization
         leftDrive = GlobalHardwareMap.getHw().dcMotor.get("left_motor");
         rightDrive = GlobalHardwareMap.getHw().dcMotor.get("right_motor");
         leftDrive.setDirection(DcMotorSimple.Direction.REVERSE);
