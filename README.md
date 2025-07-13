@@ -17,17 +17,16 @@ Even though tank drives are not traditionally field-centric, this system reorien
 
 ## How it works
 
-1. The joystick’s direction is used to calculate a **desired heading** (via `atan2`).
+1. The right joystick’s direction is used to calculate a **desired heading** (via `atan2`).
 2. The IMU continuously reports the **current heading** of the robot.
-3. The system calculates the **heading error** and applies proportional correction (`error * kp`).
+3. The system calculates the **heading error** (`desired heading - current heading`) and applies proportional correction (`error * kp`).
 4. Motor power is adjusted accordingly to rotate the robot toward the desired direction.
-5. If `left_bumper` is pressed and the joystick is headed down, the robot drives backwards while maintaining heading alignment.
+5. If `left_bumper` is pressed and the `right joystick` is facing down, the robot drives backwards while maintaining heading alignment.
+6. If the `left joystick` is facing down the robot moves simply in reverse
 
 By constantly adjusting heading based on the IMU and driver input, the robot behaves consistently **relative to the field**, no matter how it’s rotated.
 
 ---
-
-## Usage
 
 ## Usage
 
@@ -37,7 +36,7 @@ By constantly adjusting heading based on the IMU and driver input, the robot beh
 - Motors named `"left_motor"` and `"right_motor"`
 - A `GlobalHardwareMap` utility (or replace with your own hardware map reference)
 
-## Usage and Integration
+### Integration
 
 This package is designed for FTC or FGC robots using a tank drive system and the BNO055 IMU. It enables intuitive, field-centric control using only a single joystick. The core of the system is a proportional correction algorithm that keeps the robot aligned with the driver's intended direction.
 
@@ -45,25 +44,25 @@ To use this package, your hardware must include two drive motors named "left_mot
 
 To integrate this package into your project, you can either:
 - Place the `IMUAssistedDrive` package inside `TeamCode/src/main/java/org/firstinspires/ftc/teamcode` in the official FTC SDK when using Android Studio.
-- Upload each file seperatelly and via the OnBot Java interface when using OnBot Java.
+- Upload each file seperatelly via the OnBot Java interface when using OnBot Java.
 
-
-To use the class inside an OpMode, first initialize it:
+To use the class inside an OpMode, first initialize it in the init method:
 ```java
 IMUAssistedDrive drive = new IMUAssistedDrive(
     0.02,  // kp (proportional gain)
     0.05,  // joystick deadzone
     0.8    // speed multiplier
 );
+---
 
-Call the drive method inside your loop:
+Call the drive method inside the loop method:
 ```java
 drive.drive(
     gamepad1.right_stick_x,
     gamepad1.right_stick_y,
     gamepad1.left_bumper,
     gamepad1.left_stick_y
-);
-
+); 
+---
 Tune **kp** and **speedMultiplier** as needed to fit your team's robot and driving style
 
