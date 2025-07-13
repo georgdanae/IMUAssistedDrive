@@ -42,7 +42,7 @@ To integrate this package into your project, you can either:
 - Place the `IMUAssistedDrive` package inside `TeamCode/src/main/java/org/firstinspires/ftc/teamcode` in the official FTC SDK when using Android Studio.
 - Upload each file seperatelly via the OnBot Java interface when using OnBot Java.
 
-To use the class inside an OpMode, first initialize it in the init method:
+To use the class inside an OpMode (as seen in the `ExampleOpMode.java`), first initialize it in the init method:
 ```java
 IMUAssistedDrive drive = new IMUAssistedDrive(
     0.02,  // kp (proportional gain)
