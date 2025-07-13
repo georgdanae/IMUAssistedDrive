@@ -33,14 +33,10 @@ By constantly adjusting heading based on the IMU and driver input, the robot beh
 ### Prerequisites
 - Robot with a **tank drive** system
 - A configured **BNO055 IMU** named `"imu"`
-- Motors named `"left_motor"` and `"right_motor"`
+- Motors configured as `"left_motor"` and `"right_motor"`
 - A `GlobalHardwareMap` utility (or replace with your own hardware map reference)
 
 ### Integration
-
-This package is designed for FTC or FGC robots using a tank drive system and the BNO055 IMU. It enables intuitive, field-centric control using only a single joystick. The core of the system is a proportional correction algorithm that keeps the robot aligned with the driver's intended direction.
-
-To use this package, your hardware must include two drive motors named "left_motor" and "right_motor", as well as a properly configured BNO055 IMU named "imu". Additionally, your code must support accessing these components through a utility class like GlobalHardwareMap, or an equivalent hardware access method in your OpMode.
 
 To integrate this package into your project, you can either:
 - Place the `IMUAssistedDrive` package inside `TeamCode/src/main/java/org/firstinspires/ftc/teamcode` in the official FTC SDK when using Android Studio.
