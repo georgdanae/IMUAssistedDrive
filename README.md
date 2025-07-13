@@ -62,5 +62,5 @@ drive.drive(
 ); 
 
 ```
-Tune **kp** and **speedMultiplier** as needed to fit your team's robot and driving style
+Tune **kp** and **speedMultiplier** as needed to fit your team's robot and driving style.
 
