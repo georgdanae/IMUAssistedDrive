@@ -53,7 +53,8 @@ IMUAssistedDrive drive = new IMUAssistedDrive(
     0.05,  // joystick deadzone
     0.8    // speed multiplier
 );
----
+
+```
 
 Call the drive method inside the loop method:
 ```java
@@ -63,6 +64,7 @@ drive.drive(
     gamepad1.left_bumper,
     gamepad1.left_stick_y
 ); 
----
+
+```
 Tune **kp** and **speedMultiplier** as needed to fit your team's robot and driving style
 
