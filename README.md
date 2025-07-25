@@ -2,12 +2,12 @@
 
 ## What it does
 
-**IMUAssistedDrive** is a lightweight Java class designed for **field-centric control** on **tank drive robots** in FTC/FGC. It allows precise movement using **only one joystick**, with automatic heading correction powered by the **BNO055 IMU** and a simple **proportional control algorithm**.
+**IMUAssistedDrive** is a lightweight Java class designed for **field-centric control** on **tank drive robots** in FTC/FGC. It allows precise movement using **only one joystick**, with automatic heading correction powered by the **IMU** and a simple **proportional control algorithm**.
 
 Even though tank drives are not traditionally field-centric, this system reorients driver input based on the robot’s current heading, giving the driver an intuitive, field-relative control experience.
 
 ### Key Features
-- 🧭 True **field-centric control** for tank drive systems  
+- 🧭 **Field-centric control** for tank drive systems  
 - 🎮 Uses only **one joystick** for both direction and speed  
 - 📐 **Proportional heading correction** with tunable `kp`  
 - 🛞 Designed specifically for non-holonomic tank drives  
@@ -32,7 +32,7 @@ By constantly adjusting heading based on the IMU and driver input, the robot beh
 
 ### Prerequisites
 - Robot with a **tank drive** system
-- A configured **BNO055 IMU** named `"imu"`
+- A configured **IMU** named `"imu"`
 - Motors configured as `"left_motor"` and `"right_motor"`
 - A `GlobalHardwareMap` utility (or replace with your own hardware map reference)
 
